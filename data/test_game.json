@@ -1,0 +1,35 @@
+{
+    "name": "Test game",
+    "location": "keuken",
+    "target": "woonkamer",
+    "locations": [
+        {
+            "name": "woonkamer",
+            "description": "een gezellige ruimte",
+            "doors": ["hal"],
+            "items": [{
+                "name": "sleutel",
+                "description": "om een slot mee open te maken"
+            }]
+        },
+        {
+            "name": "keuken",
+            "description": "een ruimte om te koken en te eten",
+            "doors": ["hal"],
+            "items": [{
+                "name": "tafel",
+                "description": "om aan te eten"
+            }]
+        },
+        {
+            "name": "hal",
+            "description": "een ruimte die andere ruimtes met elkaar vebindt",
+            "doors": ["keuken", "woonkamer"],
+            "items": []
+        }
+    ],
+    "items": [{
+        "name": "boek",
+        "description": "om te lezen"
+    }]
+}
