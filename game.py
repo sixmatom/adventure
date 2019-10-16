@@ -1,11 +1,13 @@
 import json
 import sys
 
+from location import Location
+
 
 class Game:
-    def __init__(self, name, locations, commands=None):
+    def __init__(self, name, locations=None, commands=None):
         self.name = name
-        self.locations = locations
+        self.locations = [Location(**location) for location in (locations or [])]
 
     def __str__(self):
         return self.name
@@ -26,4 +28,4 @@ if __name__ == "__main__":
         game = Game.load(sys.argv[1])
         game.run()
     except IndexError:
-        print('Usage: %s <game.json>' % sys.argv[0])
+        print("Usage: %s <game.json>" % sys.argv[0])

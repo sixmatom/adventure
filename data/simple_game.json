@@ -2,7 +2,12 @@
     "name": "Simple game",
     "locations": [
         {
-            "name": "woonkamer"
+            "name": "woonkamer",
+            "description": "een gezellige ruimte",
+            "items": [{
+                "name": "sleutel",
+                "description": "om een slot mee open te maken"
+            }]
         }
     ]
 }
