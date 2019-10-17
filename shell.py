@@ -31,6 +31,8 @@ class Shell:
                     print(self.game.describe(str(self.game.location)))
             else:
                 print('Het commando "%s" wordt niet ondersteund' % cmd[0])
+        except IndexError:
+            print("Dit commando verwacht een parameter")
         except KeyError as e:
             print(e)
 
