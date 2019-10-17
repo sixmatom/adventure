@@ -71,6 +71,9 @@ class Game:
             if len(location.items) > 0:
                 items = [str(item) for item in location.items]
                 description += "\nEr liggen hier: %s" % ", ".join(items)
+            if len(location.exits) > 0:
+                exits = [str(out) for out in location.exits]
+                description += "\nJe kunt naar: %s" % ", ".join(exits)
         elif key in self.location.items:
             description = self.location.items[key].description
         elif key in self.items:

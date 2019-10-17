@@ -32,7 +32,7 @@ class Shell:
             else:
                 print('Het commando "%s" wordt niet ondersteund' % cmd[0])
         except IndexError:
-            print("Dit commando verwacht een parameter")
+            print("Ongeldig commando.")
         except KeyError as e:
             print(e)
 
