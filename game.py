@@ -62,9 +62,9 @@ class Game:
             raise KeyError("Je hebt geen %s" % item)
 
     def describe(self, key):
-        description = ""
-        if key in self.locations:
-            location = self.locations[key]
+        description = 'Een "%s" kan je hier niet zien.' % key
+        if key == self.location.name:
+            location = self.location
             description = location.description
             if len(location.items) > 0:
                 items = [str(item) for item in location.items]
