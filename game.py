@@ -41,19 +41,18 @@ class Game:
         return self.location == self.target
 
     def move(self, destination):
-        if (destination in self.locations) and (destination in self.location.doors):
-            self.location = self.locations[destination]
+        new_location = self.find_location(destination)
+        if new_location and self.location.is_accessible(destination):
+            self.location = new_location
         else:
             raise KeyError(
                 "%s is vanuit %s niet te bereiken" % (destination, self.location)
             )
 
     def get(self, item):
-        if item in self.location.items:
-            self.items.append(self.location.items[item])
-            del self.location.items[item]
-        else:
-            raise KeyError("Er is geen %s in %s" % (item, self.location))
+        item = self.location.get(item)
+        if item:
+            self.items[item.name] = item
 
     def drop(self, item):
         if item in self.items:
