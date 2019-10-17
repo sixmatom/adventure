@@ -42,7 +42,9 @@ class Game:
 
     def move(self, destination):
         new_location = self.find_location(destination)
-        if new_location and self.location.is_accessible(destination):
+        if new_location == self.location:
+            raise KeyError("Daar ben je al.")
+        elif new_location and self.location.is_accessible(destination):
             self.location = new_location
         else:
             raise KeyError(
