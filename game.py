@@ -56,10 +56,10 @@ class Game:
 
     def drop(self, item):
         if item in self.items:
-            self.location.items.append(self.items[item])
-            del self.items[item]
+            item = self.items.pop(item)
+            self.location.drop(item)
         else:
-            raise KeyError("Er is geen %s in %s" % (item, self.location))
+            raise KeyError("Je hebt geen %s" % item)
 
     def describe(self, key):
         description = ""

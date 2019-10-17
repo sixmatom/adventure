@@ -20,4 +20,7 @@ class Location:
         if item in self.items:
             return self.items.pop(item)
         else:
-            raise KeyError("Er is geen %s in %s" % (item, self.location))
+            raise KeyError("Er is geen %s in %s" % (item, self))
+
+    def drop(self, item):
+        self.items[item.name] = item
